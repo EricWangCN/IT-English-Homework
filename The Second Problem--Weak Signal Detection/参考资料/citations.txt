@@ -1,0 +1,21 @@
+T. Iida, Y. Arimoto and Y. Suzuki, Earth-Mars communication system for future Mars human community A story of high speed needs beyond explorations, in IEEE Aerospace and Electronic Systems Magazine, vol. 26, no. 2, pp. 19-25, Feb. 2011, doi 10.1109MAES.2011.5739485.
+
+Guanyu Wang, Dajun Chen, Jianya Lin and Xing Chen, "The application of chaotic oscillators to weak signal detection," in IEEE Transactions on Industrial Electronics, vol. 46, no. 2, pp. 440-444, April 1999, doi: 10.1109/41.753783.
+
+M. Lingkun, D. Zhimei and H. Jianguo, "A method of weak signal detection based on subband ANC and normalized energy spectrum," 2013 IEEE International Conference on Signal Processing, Communication and Computing (ICSPCC 2013), KunMing, 2013, pp. 1-4, doi: 10.1109/ICSPCC.2013.6664027.
+
+T. Hu, D. Zhang, J. Lei and Q. Wei, "A weak signal detection system: Design and simulation," 2015 IEEE International Conference on Information and Automation, Lijiang, 2015, pp. 1414-1418, doi: 10.1109/ICInfA.2015.7279508.
+
+Q. Wei, Z. Weigang and R. Da, "Simulation on multichannel navigation satellite reflected signal detection algorithm based on uniform plane array digital beamforming," 2017 IEEE International Conference on Signal Processing, Communications and Computing (ICSPCC), Xiamen, 2017, pp. 1-5, doi: 10.1109/ICSPCC.2017.8242430.
+
+Z. Zheng and F. Zhang, "Modeling and Simulation Studies Performed for Weak Signal Detection Algorithms," 2010 International Conference on Electrical and Control Engineering, Wuhan, 2010, pp. 5337-5340, doi: 10.1109/iCECE.2010.1295.
+
+P. Lahaie, "Classification and anomaly detection algorithms for weak hyperspectral signal processing," 2016 8th Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing (WHISPERS), Los Angeles, CA, 2016, pp. 1-5, doi: 10.1109/WHISPERS.2016.8071758.
+
+J. Liu, J. Liu, T. Zhang and J. Li, "Application of Cross-Correlation Algorithm in Radio Weak Signal Detection," 2009 Seventh Annual Communication Networks and Services Research Conference, Moncton, NB, 2009, pp. 440-442, doi: 10.1109/CNSR.2009.78.
+
+C. Deng and S. Zhang, "The Weak Signal Detection Based on Chaos and Genetic Algorithms," 2009 Second International Symposium on Information Science and Engineering, Shanghai, 2009, pp. 579-582, doi: 10.1109/ISISE.2009.47.
+
+J. Sun, P. Ma, N. Zheng and J. Shi, "Study on the Signal Detection Algorithm of Weak Laser Radar Target Based on Wavelet Transform," 2010 Third International Symposium on Information Processing, Qingdao, 2010, pp. 225-227, doi: 10.1109/ISIP.2010.146.
+
+Pan Xi, "ALE-FFT algorithms for weak signal acquisition," 2010 International Symposium on Intelligent Signal Processing and Communication Systems, Chengdu, 2010, pp. 1-4, doi: 10.1109/ISPACS.2010.5704773.

@@ -1,0 +1,97 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}
+\usepackage{xeCJK}
+
+\usepackage{geometry} 
+\geometry{left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm} %上下左右空白距离
+\pagestyle{plain}
+\usepackage{titlesec} %标题
+
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{multirow}
+\usepackage{times}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage[small]{caption}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{subfigure}
+\usepackage{stfloats}
+%\usepackage{amsmath}
+\usepackage{float}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{booktabs}  %表格
+\usepackage{algorithm} %format of the algorithm
+\usepackage{algorithmic} %format of the algorithm
+
+\usepackage{setspace}
+\usepackage{parskip} % Package to tweak paragraph skipping 
+\usepackage{tikz} % Package for drawing 
+\usepackage{amssymb}%数学字体与符号 
+\usepackage{amsmath}%数学公式 
+\usepackage{hyperref}%超链接与其他 PDF 专有功能（如表单制做）常用 
+\usepackage{booktabs}%使用三线表booktabs 
+\usepackage{longtable}%长表格自动分页 
+\usepackage{graphicx}%插入图片 
+\usepackage{subfigure} %多张图片组合
+\usepackage{float}%将图片插入指定位置[H] 
+\usepackage{indentfirst}%首行缩进
+\setlength{\parindent}{2em} %段首缩进
+\setlength{\parskip}{0em} %段落间距
+\usepackage{times} %使得英文默认字体都是Times New Roman
+\usepackage{verbatim}
+\usepackage{gensymb}
+\linespread{1.2} %全文行间距
+
+\newcommand{\song}{\CJKfamily{song}}
+\usepackage{listings}
+\lstset{language=Matlab}
+\titlespacing*{\section} {0pt}{3pt}{6pt} %标题间距
+\titlespacing*{\subsection} {0pt}{0pt}{0pt} %标题间距
+\titlespacing*{\subsubsection} {0pt}{0pt}{0pt} %标题间距
+\titleformat{\section}[block]{\centering\large\bfseries}{\arabic{section}}{1em}{}
+\titleformat{\subsection}[block]{\normalsize\bfseries}{\arabic{section}.\arabic{subsection}}{0.5em}{}
+%章节序号与标题的字号及间距修改
+\titleformat{\subsubsection}[block]{\normalsize\bfseries}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{0.5em}{}
+
+% use buildin Chinese font in linux and Mac
+\setCJKmainfont[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf}
+\setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+\setCJKmonofont{FandolFang-Regular.otf}
+
+
+\begin{document}
+
+根据中心极限定理，$x_i$\~{$N(\mu_i,\sigma_i)$}的和服从于$\mu=\sum \mu _i, \sigma = \sum \sigma _i$的正态分布。因此PPT中的公式$d=\sum^N_1 w(n)\to 0$应该改为$d=\sum^N_1 w(n)\to N(0,N)$。
+
+由PPT可以得\textbf{公式(1)}：
+\begin{equation}
+\sum^N_1 y(n) = Nhx(1)+\sum^N_1 \omega(n)
+\end{equation}
+
+在\textbf{公式(1)}中，第一项$Nhx$的数量级正比于$k_1N$，而第二项$\sum^N_1 \omega(n)$的数量级出现概率在$90\%$以上的数据正比于$k_2\sqrt{N}$。同时$k_1$是常数，且大小与$h$相等，$k_2$是一个固定的常数，且$k_1<<k_2$。
+
+当$N=10^6$是，而第二项$\sum^N_1 \omega(n)$的数量级出现概率在$90\%$以上的数据大小为$10^3$，而第一项$Nkx$大小仅为$10^0$，要想达到计算出的BER大小“可接受”，则N应放大$10^6$倍，此时N的数量级已经来到了$10^{12}$，这个数量级在同学们的计算机上面是完全不可计算的。因此只能采取放大$h$的措施，让$h$放大到$10^{-3}$以上，同时$N=10^6$才能使BER的大小可接受，但当$N=10^6$时，运算时间已经以分钟计，当需要将$N$从一个比较小的值向$10^6$画图时，运算时间也是不可接受的，因此理论上需要将$h$放大到$10^{-2}$，整个过程才是可以仿真的。
+
+
+
+
+
+
+
+
+
+\end{document}

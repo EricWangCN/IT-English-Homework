@@ -1,0 +1,111 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{listings}
+\usepackage[framed,numbered,autolinebreaks,useliterate]
+
+%\documentclass[draftcls, 12pt,onecolumn,oneside]{IEEEtran}
+\usepackage{cite,graphicx,amssymb,amsmath,color,textcomp}
+\newtheorem{theorem}{\underline{Theorem}}%[section]
+\newtheorem{lemma}{\underline{Lemma}}%[section]
+\newtheorem{remark}{\underline{Remark}}%[section]
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+\usepackage[nocompress]{cite}
+\else
+\usepackage{cite}
+\fi
+\newcounter{mytempeqncnt}
+
+\begin{document}
+
+
+\title{Design and Simulation of a Weak Signal Detection Algorithm: Multiple Signal Sending Algorithm}
+\author{Zilong Wang 18281218\\wangzilong@bjtu.edu.cn
+ }
+
+
+\maketitle
+\begin{abstract}
+The communication between earth and moon is obscured by noise. Noise produced by the long-distance interference is inevitable, so a weak signal detection algorithm called multiple signal sending algorithm is designed in this paper to solve this de-noise problem. The key of the algorithm is sending and receiving a signal for more times. It has the advantage that it can significantly improve the accuracy of received signals. The results of simulation proved the validity of the multiple signal sending algorithm.
+\end{abstract}
+
+\begin{IEEEkeywords}
+weak signal detection system, de-noise problem, earth-moon communication, simulation
+\end{IEEEkeywords}
+
+
+\section{Introduction}
+The technology of weak signal detection is widely used in radar, communication, sonar, earthquake and industrial measurement\cite{b1}. In free space, if a spherical wave is radiated at the transmitting point, the power at the receiving point is $P_r=\frac{P_t}{d^2}$, where $P_r$ is the power at the receiving point, $P_r$ is the power at the transmitting point and $d$ is the distance between the two points. Considering the distance between moon and earth is $384,400$km, so the power at the receiving point will be extremely weak. Compared with noises, the amplitude of the useful signal is weak and completely obscured by the noise\cite{b2}.
+
+At present, a weak signal detection algorithm is important in the communication between earth and moon. In this paper, we focuses on the multiple signal sending algorithm and its simulation.
+
+
+
+\section{Related Work}
+\subsection{ALE-FFT Algorithms\cite{b3}}
+The FFT acquisition is a normal method in this case and ALE-FFT algorithm that ALE is added before FFT can enhance the ability of weak signal detection, especially for the weak signal which has big dynamic range of Doppler frequency. In residual carrier acquisition mode, the ALE is equivalent to an adaptive band-pass filter which enhances the acquisition signal noise ratio(SNR) greatly.
+
+\subsection{Wavelet Transform\cite{b4}}
+The basic meaning of Wavelet Transform(WT) is the x signal through the scale and shift, decomposes to a series of sub-frequency having the different spatial resolution, the different frequency characteristic and the directional characteristic innertube signal, this innertube signal has a good time domain, a frequency band and other partial characteristics. Therefore the wavelet analysis to signal has an excellent detection performance under low SNR.
+
+
+\section{The Proposed Method}
+\subsection{Problem Description}
+Given the signal $x(n)$ sent from moon where $x(n)=\pm 1$ with equal probability. $\omega(n)$ is white Gaussian noise and $\omega(n)$ obeys $N(0,1)$. Suppose $y(n)$ is the signal received in the earth, $y(n) = h\,x(n) + \omega(n)$, where $h$ is the weaken ratio of the signal traveling from moon to earth. In this problem, we set $h = 10^{-6}$. The problem is recovering $x(n)$ from $y(n)$.
+
+\subsection{Multiple Signal Sending Algorithm}
+The $\omega(n)$ is always an independent variable obeys $N(0,1)$. The sum of $\omega(n)$ should approach $0$ due to Central Limit Theorem\cite{b5}. So we send each signal from $1$ time to $N$ times. Taking when $n=1$ as an example:
+
+\begin{equation}
+y(N) = h\,x(1)+\omega(N)
+\end{equation}
+
+We calculate the sum of $y(n)$ and \textbf{OP(1)} can be developed as follows \textbf{OP(2)}:
+\begin{equation}
+\sum^N_1 y(n) = Nhx(1)+\sum^N_1 \omega(n)
+\end{equation}
+
+The sum of $\omega(n)$ is approaching $0$ when $N\to \infty$, so \textbf{OP(2)} can be transformed as follows \textbf{OP(3)}:
+\begin{equation}
+N\,y(n)=Nhx(1)
+\end{equation}
+So when $N$ is large enough, we can recover x(n) from y(n) by the sign of $\sum^N_1y(n)$. If $\sum^N_1y(n) \ge 0$, we can interpret $x(n)$ from $y(n)$ as $1$. In contrast, if $\sum^N_1y(n) < 0$, we can interpret $x(n)$ from $y(n)$ as $-1$.
+
+
+\section{Simulation}
+Using central limit theorem, the sum of independent variables $x_i$\~{$N(\mu_i,\sigma_i)$} obey normal distribution and the $\mu, \sigma$ of this normal distribution is $\mu=\sum \mu _i, \sigma = \sum \sigma _i$. Focusing on \textbf{OP(2)}, the largest order of magnitude with an occurrence probability above $90\%$ is proportional to $k_1\sqrt{N}$, whereas the order of magnitude of $Nhx$ is proportional to $k_2N$. $k_1$ depends on the value of $h$ while $k_2$ is a constant value. when $N=10^6$, the largest order of magnitude with an occurrence probability above $90\%$ is $10^3$ and the order of magnitude of $Nhx$ is $10^0$. If we want to recover $x$ from $y$ accurately, the order of magnitude of $Nhx$ need to be much greater than $\sum w$, so $N$ should be enlarged more than $10^6$ times. At that time, $N$ will be greater than $10^{12}$ which is incalculable because its quantity is too large. We can only enlarge $h$ to solve this problem. If we keep $N$ as $10^6$ and we change $h$ to $10^{-3}$, then the BER is acceptable.
+
+
+
+
+
+
+
+\section{Result}
+
+
+
+
+
+
+
+
+
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{00}
+\bibitem{b1} MA Li-xin, “Weak signal detection based on duffing oscillator,” International Conference on Information Management, Innovation Management and Industrial Engineering, pp. 430-433, 2008.
+\bibitem{b2} Shuo Shi, Wanyi Yin, Mingchuan Yang, and Mingjie He, “A highresolution weak signal detection method based on stochastic resonance and superhet technology,” 7th International ICST conference on communications and networking, China, pp. 329-333, 2012.
+\bibitem{b3} Pan Xi, "ALE-FFT algorithms for weak signal acquisition," 2010 International Symposium on Intelligent Signal Processing and Communication Systems, Chengdu, 2010, pp. 1-4, doi: 10.1109/ISPACS.2010.5704773.
+\bibitem{b4} J. Sun, P. Ma, N. Zheng and J. Shi, "Study on the Signal Detection Algorithm of Weak Laser Radar Target Based on Wavelet Transform," 2010 Third International Symposium on Information Processing, Qingdao, 2010, pp. 225-227, doi: 10.1109/ISIP.2010.146.
+\bibitem{b5} Montgomery, Douglas C.; Runger, George C. (2014). “Applied Statistics and Probability for Engineers (6th ed.)”. Wiley. p. 241. ISBN 9781118539712.
+\end{thebibliography}
+
+
+
+
+
+\end{document}
+
+
+
